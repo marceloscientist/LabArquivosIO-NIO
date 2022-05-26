@@ -15,8 +15,7 @@ public class Cap16_Lab1 {
 	}
 	public static void escrever(String texto) {
 		try {
-			FileOutputStream arquivo = new FileOutputStream("escrita-java"); 
-			DataOutputStream dados = new DataOutputStream(arquivo);
+			DataOutputStream dados = new DataOutputStream(new FileOutputStream("escrita-java"));
 			dados.writeChars(texto);
 			
 		} catch(IOException e) {
@@ -26,8 +25,7 @@ public class Cap16_Lab1 {
 	
 	public static void ler() {
 		try {
-			FileInputStream arquivo = new FileInputStream("escrita-java");
-			DataInputStream dados = new DataInputStream(arquivo);
+			DataInputStream dados = new DataInputStream(new FileInputStream("escrita-java"));
 			while(dados.available() > 0) {
 				char c = dados.readChar();
 				System.out.println(c);
